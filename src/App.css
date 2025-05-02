@@ -14,18 +14,54 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.AdminSmallFormContainer {
+  display: flex;
+  flex-direction: row;
+}
+/* .AdminSmallFormContainer > div {
+  display: inline-block;
+  margin: 10px;
+} */
+
+.SmallFormContainer {
+  border: 1px solid white;
+  padding: 10px;
+  margin: 10px;
+}
+
+.SmallFormInput {
+  padding: 5px;
+  margin: 10px;
+  font-size: 16pt;
+}
+
+.SmallFormButton {
+  padding: 5px;
+  margin: 10px;
+  font-size: 16pt;
+  background-color: #000000;
+  border: 1px solid white;
+  color: #ffffff;
+}
+.SmallFormButton:hover {
+
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {
