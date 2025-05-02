@@ -8,7 +8,7 @@ import AuthContext from '../AuthProvider';
 export function WatchVideo() {
     
     const videoPlayer = useRef(null);
-    const {auth, setAuth} = useContext(AuthContext)
+    const { auth } = useContext(AuthContext)
     
     console.log(auth)
 

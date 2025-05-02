@@ -1,4 +1,5 @@
 import { SmallForm } from '../Components/SmallForm'
+import { UserTable } from '../Components/UserTable'
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -32,38 +33,44 @@ const addVideoCallBack = () => {
 export function Admin() {
 
     let userForm = {
-        "formName": "Add User",
+        "formName": "Ajouter un utilisateur",
         "fields": [
             {
-                "placeholder": "UserName",
+                "inputType": "text",
+                "placeholder": "Nom d'utilisateur",
                 "changeValueCallback": (newVal) => userName = newVal
             },
             {
-                "placeholder": "Password",
+                "inputType": "text",
+                "placeholder": "Mot de passe",
                 "changeValueCallback": (newVal) => password = newVal
             }
         ],
-        "formCallBack" : () => addUserCallBack()
+        "formCallBack" : () => addUserCallBack(),
+        "buttonTxt": "Ajouter"
     }
 
     let videoForm = {
-        "formName": "Add Video",
+        "formName": "Ajouter une vidéo",
         "fields": [
             {
-                "placeholder": "Name",
+                "inputType": "text",
+                "placeholder": "Nom",
                 "changeValueCallback": (newVal) => videoName = newVal
             },
             {
+                "inputType": "text",
                 "placeholder": "URL",
                 "changeValueCallback": (newVal) => videoURL = newVal
             }
         ],
-        "formCallBack" : () => addVideoCallBack()
+        "formCallBack" : () => addVideoCallBack(),
+        "buttonTxt": "Ajouter"
     }
 
     return (
         <>
-            <h1>Admin</h1>
+            <h1>Administration</h1>
             <div className='AdminSmallFormContainer'>
                 <SmallForm
                     formInfo={userForm}
@@ -72,6 +79,8 @@ export function Admin() {
                     formInfo={videoForm}
                 />
             </div>
+            <h2>Utilisateurs</h2>
+            <UserTable />
         </>
     )
 }

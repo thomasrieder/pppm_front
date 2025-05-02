@@ -37,43 +37,29 @@ export function Login() {
         } catch(err) {
 
         }
-        // axios.post(BACKEND_URL+"/checkLoginUser", {
-        //   "userName": userName,
-        //   "password": password
-        // }).then(function (response) {
-            
-        //     console.log(response)
-    
-        //     if (response.data >= 0) {
-        //         // setUserId(response.data)
-        //         // setUser_id(response.data)
-        //         navigate("/video");
-        //     }
-        // })
-    }
-    // useEffect(() => {
         
-    //     console.log("NEW USER LOGIN: "+user_id);
-    // }, [user_id])
+    }
     
     let loginForm = {
-        "formName": "Login",
+        "formName": "Connexion",
         "fields": [
             {
-                "placeholder": "UserName",
+                "inputType": "text",
+                "placeholder": "Utilisateur",
                 "changeValueCallback": (newVal) => userName = newVal
             },
             {
-                "placeholder": "Password",
+                "inputType": "password",
+                "placeholder": "Mot de passe",
                 "changeValueCallback": (newVal) => password = newVal
             }
         ],
-        "formCallBack" : () => LoginCallBack()
+        "formCallBack" : () => LoginCallBack(),
+        "buttonTxt": "Se connecter"
     }
 
     return (
         <>
-            <h1>Login</h1>
             <div className='AdminSmallFormContainer'>
                 <SmallForm
                     formInfo={loginForm}

@@ -6,12 +6,12 @@ export const SmallForm = ({ formInfo }) => {
         {formInfo.fields.map((field, e) => (
             <input
                 key={e}
-                type="text" 
+                type={field.inputType} 
                 onChange={e => field.changeValueCallback(e.target.value)}
                 placeholder={field.placeholder} 
                 className="SmallFormInput"/>
         ))}
-        <button className="SmallFormButton" onClick={formInfo.formCallBack}>add</button>
+        <button className="SmallFormButton" onClick={formInfo.formCallBack}>{formInfo.buttonTxt}</button>
     </div>
   );
 }
